@@ -1,0 +1,139 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #10162f;
+	padding: 30px 20px 15px;
+	margin-bottom: 20px;
+	min-width: 400px;
+}
+
+.title {
+	color: #fff;
+	font-size: 64px;
+	line-height: 1.1;
+	font-weight: 700;
+	font-family: 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	margin-bottom: 10px;
+}
+
+.accordion {
+	width: 100%;
+	min-width: 400px;
+	color: #fff;
+	background-color: #10162f;
+	border: none;
+	outline: none;
+	text-align: left;
+	padding: 15px 20px;
+	font-size: 20px;
+	font-family: Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	font-weight: 700;
+	letter-spacing: 3px;
+	cursor: pointer;
+	transition: 0.4s all linear;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.accordion:hover {
+	background-color: #fff;
+	color: #10162f;
+}
+
+.accordion::after {
+	content: '\f055';
+	font-family: 'fontawesome';
+	padding-top: 5px;
+	font-size: 20px;
+	float: right;
+}
+
+.accordion.active::after {
+	content: '\f056';
+}
+
+.accordion__content {
+	padding: 2px 3px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease-in-out;
+}
+
+.accordion__content:last-of-type {
+	margin-bottom: 40px;
+}
+
+.table {
+	border-collapse: collapse;
+	margin: 5px 0;
+	min-width: 400px;
+	overflow: hidden;
+}
+
+.table__head tr {
+	background: #10162f;
+	color: #fff;
+	text-align: left;
+	font-weight: 700;
+	font-size: 20px;
+	font-family: 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+}
+
+.head__item,
+.body__item {
+	padding: 12px 15px;
+	font-family: Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	letter-spacing: 1px;
+}
+
+.table__body tr {
+	border-bottom: 1px solid #ddd;
+}
+
+.table__body tr:nth-of-type(even) {
+	background: #f3f3f3;
+}
+
+.table__body tr:last-of-type {
+	border-bottom: 2px solid #10162f;
+}
+
+.link {
+	padding-top: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+	transition: all 0.4s;
+	font-family: Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+}
+
+.link:hover {
+	color: pink;
+}
+
+.secondary__title {
+	margin: 20px 0 10px;
+	font-size: 40px;
+	font-family: 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	font-weight: 700;
+	color: #10162f;
+}
+
+.red {
+	color: red;
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/54fc82abea.js"></script>
+    <title>Git Cheat Sheet</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Page Title -->
+            <h1 class="title">Git Cheatsheet</h1>
+
+            <!-- link -->
+            <a href="https://www.atlassian.com/git" class="link">Based on Atlassian cheatsheet</a>
+
+        </div>
+
+    </header>
+    <div class="container">
+
+        <h2 class="secondary__title">Fundamentals</h2>
+        <!-- Basic Area -->
+        <button class="accordion">Git Basics</button>
+        <div class="accordion__content">
+            <section class="basics">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th class="head__item">Command</th>
+                            <th class="head__item">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git init &lt;directory&gt;</td>
+                            <td class="body__item">Create empty Git repo in specified directory. Run with no arguments to initialize the current directory as a git repository.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git clone &lt;repo&gt;</td>
+                            <td class="body__item">Clone repo located at &lt;repo&gt; onto local machine. Original repo can be located on the local filesystem or on a remote machine via HTTP or SSH.
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git config user.name &lt;name&gt;</td>
+                            <td class="body__item">Define author name to be used for all commits in current repo. Devs commonly use --global flag to set config options for current user.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git add &lt;directory&gt;</td>
+                            <td class="body__item">Stage all changes in &lt;directory&gt; for the next commit. Replace &lt;directory&gt; with a &lt;file&gt; to change a specific file.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git commit -m "&lt;message&gt;"</td>
+                            <td class="body__item">Commit the staged snapshot, but instead of launching a text editor, use &lt;message&gt; as the commit message.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git status</td>
+                            <td class="body__item">List which files are staged, unstaged, and untracked.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log</td>
+                            <td class="body__item">Display the entire commit history using the default format. For customization see additional options.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git diff</td>
+                            <td class="body__item">Show unstaged changes between your index and working directory.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Changes Areas -->
+        <button class="accordion">Undoing Changes</button>
+        <div class="accordion__content">
+            <section class="changes">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th class="head__item">Command</th>
+                            <th class="head__item">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git revert &lt;commit&gt;</td>
+                            <td class="body__item">Create new commit that undoes all of the changes made in &lt;commit&gt;, then apply it to the current branch.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git reset &lt;file&gt;</td>
+                            <td class="body__item">Remove &lt;file&gt; from the staging area, but leave the working directory unchanged. This unstages a file without overwriting any changes.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git clean -n</td>
+                            <td class="body__item">Shows which files would be removed from working directory. Use the -f flag in place of the -n flag to execute the clean.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- History -->
+        <button class="accordion">Rewriting Git History</button>
+        <div class="accordion__content">
+            <section class="history">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th class="head__item">Command</th>
+                            <th class="head__item">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git commit --amend</td>
+                            <td class="body__item">Replace the last commit with the staged changes and last commit combined. Use with nothing staged to edit the last commit’s message.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git rebase &lt;base&gt;</td>
+                            <td class="body__item">Rebase the current branch onto &lt;base&gt;. &lt;base&gt; can be a commit ID, branch name, a tag, or a relative reference to HEAD.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git reflog</td>
+                            <td class="body__item">Show a log of changes to the local repository’s HEAD. Add --relative-date flag to show date info or --all to show all refs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Branches Area-->
+        <button class="accordion">Git Branches</button>
+        <div class="accordion__content">
+            <section class="branches">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th class="head__item">Command</th>
+                            <th class="head__item">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git branch</td>
+                            <td class="body__item">List all of the branches in your repo. Add a &lt;branch&gt; argument to create a new branch with the name &lt;branch&gt;.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git checkout -b &lt;branch&gt;</td>
+                            <td class="body__item">Create and check out a new branch named &lt;branch&gt;. Drop the -b flag to checkout an existing branch.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git merge &lt;branch&gt;</td>
+                            <td class="body__item">Merge &lt;branch&gt; into the current branch.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Remote Area -->
+        <button class="accordion">Remote Repositories</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <thead class="table__head">
+                        <tr class="table__row">
+                            <th class="head__item">Command</th>
+                            <th class="head__item">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git remote add &lt;name&gt; &lt;url&gt;</td>
+                            <td class="body__item">Create a new connection to a remote repo. After adding a remote, you can use &lt;name&gt; as a shortcut for &lt;url&gt; in other commands..</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git fetch &lt;remote&gt; &lt;branch&gt;</td>
+                            <td class="body__item">Fetches a specific &lt;branch&gt;, from the repo. Leave off &lt;branch&gt; to fetch all remote refs.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git pull &lt;remote&gt;</td>
+                            <td class="body__item">Fetch the specified remote’s copy of current branch and immediately merge it into the local copy.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git push &lt;remote&gt; &lt;branch&gt;</td>
+                            <td class="body__item">Push the branch to &lt;remote&gt;, along with necessary commits and objects. Creates named branch in the remote repo if it doesn’t exist.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Aditional Options -->
+        <h2 class="secondary__title">Aditional Options</h2>
+
+        <!-- Config Area -->
+        <button class="accordion">Git Config</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git config --global user.name &lt;name&gt;</td>
+                            <td class="body__item">Define the author name to be used for all commits by the current user.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git config --global user.email &lt;email&gt;</td>
+                            <td class="body__item">Define the author email to be used for all commits by the current user.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git config --global alias. &lt;alias-name&gt; &lt;git-command&gt;</td>
+                            <td class="body__item">Create shortcut for a Git command. E.g. alias.glog “log --graph --oneline” will set ”git glog” equivalent to ”git log --graph--oneline.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git config --system core.editor &lt;editor&gt;</td>
+                            <td class="body__item">Set text editor used by commands for all users on the machine. &lt;editor&gt; arg should be the command that launches the desired editor (e.g., vi).
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git config --global --edit</td>
+                            <td class="body__item">Open the global configuration file in a text editor for manual editing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Log Area -->
+        <button class="accordion">Git Log</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git log -&lt;limit&gt;</td>
+                            <td class="body__item">Limit number of commits by &lt;limit&gt;. E.g. ”git log -5” will limit to 5 commits.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log --oneline</td>
+                            <td class="body__item">Condense each commit to a single line.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log -p</td>
+                            <td class="body__item">Display the full diff of each commit.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log --stat</td>
+                            <td class="body__item">Include which files were altered and the relative number of lines that were added or deleted from each of them.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log --author=”&lt;pattern&gt;”</td>
+                            <td class="body__item">Search for commits by a particular author.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log --grep=”&lt;pattern&gt;”</td>
+                            <td class="body__item">Search for commits with a commit message that matches &lt;pattern&gt;</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log &lt;since&gt;..&lt;until&gt;</td>
+                            <td class="body__item">Show commits that occur between &lt;since&gt; and &lt;until&gt;. Args can be a commit ID, branch name, HEAD, or any other kind of revision reference.
+                            </td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log -- &lt;file&gt;</td>
+                            <td class="body__item">Only display commits that have the specified file.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git log --graph --decorate</td>
+                            <td class="body__item">--graph flag draws a text based graph of commits on left side of commit msgs. --decorate adds names of branches or tags of commits shown.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Diff Area -->
+        <button class="accordion">Git Diff</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git diff HEAD</td>
+                            <td class="body__item">Show difference between working directory and last commit.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git diff --cached</td>
+                            <td class="body__item">Show difference between staged changes and last commit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Reset Area -->
+        <button class="accordion">Git reset</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git reset</td>
+                            <td class="body__item">Reset staging area to match most recent commit, but leave the working directory unchanged.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git reset <span class="red">--hard</span></td>
+                            <td class="body__item">Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git reset &lt;commit&gt;</td>
+                            <td class="body__item">Move the current branch tip backward to &lt;commit&gt;, reset the staging area to match, but leave the working directory alone.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git reset <span class="red">--hard</span> &lt;commit&gt;</td>
+                            <td class="body__item">Same as previous, but resets both the staging area & working directory to match. Deletes uncommitted changes, and all commits after &lt;commit&gt;.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Rebase Area -->
+        <button class="accordion">Git Rebase</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git rebase -i&lt;base&gt;</td>
+                            <td class="body__item">Interactively rebase current branch onto &lt;base&gt;. Launches editor to enter commands for how each commit will be transferred to the new base.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Pull Area -->
+        <button class="accordion">Git Pull</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git pull --rebase &lt;remote&gt;</td>
+                            <td class="body__item">Fetch the remote’s copy of current branch and rebases it into the local copy. Uses git rebase instead of merge to integrate the branches.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- Push Area -->
+        <button class="accordion">Git Push</button>
+        <div class="accordion__content">
+            <section class="repo">
+                <table class="table">
+                    <tbody class="table__body">
+                        <tr class="table__row">
+                            <td class="body__item">git push &lt;remote&gt; <span class="red">--force</span></td>
+                            <td class="body__item">Forces the git push even if it results in a non-fast-forward merge. Do not use the <span class="red">--force</span> flag unless you’re absolutely
+                                sure you know what you’re doing.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git push &lt;remote&gt; --all</td>
+                            <td class="body__item">Push all of your local branches to the specified remote.</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="body__item">git push &lt;remote&gt; --tags</td>
+                            <td class="body__item">Tags aren’t automatically pushed when you push a branch or use the --all flag. The --tags flag sends all of your local tags to the remote repo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
